@@ -1,0 +1,716 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/form-data/form-data#readme"
+
+    >form-data (v2.1.2)</a>
+</h1>
+<h4>A library to create readable "multipart/form-data" streams. Can be used to submit forms and file uploads to other web applications.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.form-data">module form-data</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_">
+            function <span class="apidocSignatureSpan">form-data.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">form-data.</span>super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">form-data.</span>DEFAULT_CONTENT_TYPE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">form-data.</span>LINE_BREAK</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.form-data.super_">module form-data.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.super_">
+            function <span class="apidocSignatureSpan">form-data.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.create">
+            function <span class="apidocSignatureSpan">form-data.super_.</span>create
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.isStreamLike">
+            function <span class="apidocSignatureSpan">form-data.super_.</span>isStreamLike
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.form-data.super_.prototype">module form-data.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype._checkDataSize">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_checkDataSize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype._emitError">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_emitError
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype._getNext">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_getNext
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype._handleErrors">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_handleErrors
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype._pipeNext">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_pipeNext
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype._reset">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype._updateDataSize">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_updateDataSize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype.append">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>append
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype.destroy">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype.end">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype.pause">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype.pipe">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>pipe
+            <span class="apidocSignatureSpan">(dest, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype.resume">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.form-data.super_.prototype.write">
+            function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>write
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.form-data" id="apidoc.module.form-data">module form-data</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_" id="apidoc.element.form-data.super_">
+        function <span class="apidocSignatureSpan">form-data.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CombinedStream() {
+  this.writable = false;
+  this.readable = true;
+  this.dataSize = 0;
+  this.maxDataSize = 2 * 1024 * 1024;
+  this.pauseStreams = true;
+
+  this._released = false;
+  this._streams = [];
+  this._currentStream = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.form-data.super_" id="apidoc.module.form-data.super_">module form-data.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.super_" id="apidoc.element.form-data.super_.super_">
+        function <span class="apidocSignatureSpan">form-data.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Stream() {
+  EE.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.create" id="apidoc.element.form-data.super_.create">
+        function <span class="apidocSignatureSpan">form-data.super_.</span>create
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (options) {
+  var combinedStream = new this();
+
+  options = options || {};
+  for (var option in options) {
+    combinedStream[option] = options[option];
+  }
+
+  return combinedStream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.isStreamLike" id="apidoc.element.form-data.super_.isStreamLike">
+        function <span class="apidocSignatureSpan">form-data.super_.</span>isStreamLike
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStreamLike = function (stream) {
+  return (typeof stream !== &#x27;function&#x27;)
+    &#x26;&#x26; (typeof stream !== &#x27;string&#x27;)
+    &#x26;&#x26; (typeof stream !== &#x27;boolean&#x27;)
+    &#x26;&#x26; (typeof stream !== &#x27;number&#x27;)
+    &#x26;&#x26; (!Buffer.isBuffer(stream));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.form-data.super_.prototype" id="apidoc.module.form-data.super_.prototype">module form-data.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype._checkDataSize" id="apidoc.element.form-data.super_.prototype._checkDataSize">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_checkDataSize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_checkDataSize = function () {
+  this._updateDataSize();
+  if (this.dataSize &#x3c;= this.maxDataSize) {
+    return;
+  }
+
+  var message =
+    &#x27;DelayedStream#maxDataSize of &#x27; + this.maxDataSize + &#x27; bytes exceeded.&#x27;;
+  this._emitError(new Error(message));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype._emitError" id="apidoc.element.form-data.super_.prototype._emitError">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_emitError
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_emitError = function (err) {
+  this._reset();
+  this.emit(&#x27;error&#x27;, err);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype._getNext" id="apidoc.element.form-data.super_.prototype._getNext">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_getNext
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getNext = function () {
+  this._currentStream = null;
+  var stream = this._streams.shift();
+
+
+  if (typeof stream == &#x27;undefined&#x27;) {
+    this.end();
+    return;
+  }
+
+  if (typeof stream !== &#x27;function&#x27;) {
+    this._pipeNext(stream);
+    return;
+  }
+
+  var getStream = stream;
+  getStream(function(stream) {
+    var isStreamLike = CombinedStream.isStreamLike(stream);
+    if (isStreamLike) {
+      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      this._handleErrors(stream);
+    }
+
+    this._pipeNext(stream);
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype._handleErrors" id="apidoc.element.form-data.super_.prototype._handleErrors">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_handleErrors
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_handleErrors = function (stream) {
+  var self = this;
+  stream.on(&#x27;error&#x27;, function(err) {
+    self._emitError(err);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype._pipeNext" id="apidoc.element.form-data.super_.prototype._pipeNext">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_pipeNext
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_pipeNext = function (stream) {
+  this._currentStream = stream;
+
+  var isStreamLike = CombinedStream.isStreamLike(stream);
+  if (isStreamLike) {
+    stream.on(&#x27;end&#x27;, this._getNext.bind(this));
+    stream.pipe(this, {end: false});
+    return;
+  }
+
+  var value = stream;
+  this.write(value);
+  this._getNext();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype._reset" id="apidoc.element.form-data.super_.prototype._reset">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_reset = function () {
+  this.writable = false;
+  this._streams = [];
+  this._currentStream = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype._updateDataSize" id="apidoc.element.form-data.super_.prototype._updateDataSize">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>_updateDataSize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_updateDataSize = function () {
+  this.dataSize = 0;
+
+  var self = this;
+  this._streams.forEach(function(stream) {
+    if (!stream.dataSize) {
+      return;
+    }
+
+    self.dataSize += stream.dataSize;
+  });
+
+  if (this._currentStream &#x26;&#x26; this._currentStream.dataSize) {
+    this.dataSize += this._currentStream.dataSize;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype.append" id="apidoc.element.form-data.super_.prototype.append">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>append
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">append = function (stream) {
+  var isStreamLike = CombinedStream.isStreamLike(stream);
+
+  if (isStreamLike) {
+    if (!(stream instanceof DelayedStream)) {
+      var newStream = DelayedStream.create(stream, {
+        maxDataSize: Infinity,
+        pauseStream: this.pauseStreams,
+      });
+      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      stream = newStream;
+    }
+
+    this._handleErrors(stream);
+
+    if (this.pauseStreams) {
+      stream.pause();
+    }
+  }
+
+  this._streams.push(stream);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+a buffer and a file stream.
+
+``` javascript
+var FormData = require(&#x27;form-data&#x27;);
+var fs = require(&#x27;fs&#x27;);
+
+var form = new FormData();
+form.<span class="apidocCodeKeywordSpan">append</span>(&#x27;my_field&#x27;, &#x27;my value&#x27;);
+form.append(&#x27;my_buffer&#x27;, new Buffer(10));
+form.append(&#x27;my_file&#x27;, fs.createReadStream(&#x27;/foo/bar.jpg&#x27;));
+```
+
+Also you can use http-response stream:
+
+``` javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype.destroy" id="apidoc.element.form-data.super_.prototype.destroy">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {
+  this._reset();
+  this.emit(&#x27;close&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype.end" id="apidoc.element.form-data.super_.prototype.end">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function () {
+  this._reset();
+  this.emit(&#x27;end&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype.pause" id="apidoc.element.form-data.super_.prototype.pause">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function () {
+  if (!this.pauseStreams) {
+    return;
+  }
+
+  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.pause) == &#x27;function&#x27;) this._currentStream.pause();
+  this.emit(&#x27;pause&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype.pipe" id="apidoc.element.form-data.super_.prototype.pipe">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>pipe
+        <span class="apidocSignatureSpan">(dest, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipe = function (dest, options) {
+  Stream.prototype.pipe.call(this, dest, options);
+  this.resume();
+  return dest;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var request = http.request({
+  method: &#x27;post&#x27;,
+  host: &#x27;example.org&#x27;,
+  path: &#x27;/upload&#x27;,
+  headers: form.getHeaders()
+});
+
+form.<span class="apidocCodeKeywordSpan">pipe</span>(request);
+
+request.on(&#x27;response&#x27;, function(res) {
+  console.log(res.statusCode);
+});
+```
+
+Or if you would prefer the `&#x27;Content-Length&#x27;` header to be set for you:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype.resume" id="apidoc.element.form-data.super_.prototype.resume">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resume = function () {
+  if (!this._released) {
+    this._released = true;
+    this.writable = true;
+    this._getNext();
+  }
+
+  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.resume) == &#x27;function&#x27;) this._currentStream.resume();
+  this.emit(&#x27;resume&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+In order to submit this form to a web application, call ```submit(url, [callback])``` method:
+
+``` javascript
+form.submit(&#x27;http://example.org/&#x27;, function(err, res) {
+  // res – response object (http.IncomingMessage)  //
+  res.<span class="apidocCodeKeywordSpan">resume</span>();
+});
+
+```
+
+For more advanced request manipulations ```submit()``` method returns ```http.ClientRequest``` object, or you can choose from one
+ of the alternative submission methods.
+
+### Alternative submission methods
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.form-data.super_.prototype.write" id="apidoc.element.form-data.super_.prototype.write">
+        function <span class="apidocSignatureSpan">form-data.super_.prototype.</span>write
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data) {
+  this.emit(&#x27;data&#x27;, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
