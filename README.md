@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/form-data.png?downloads=true)](https://www.npmjs.com/package/form-data)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-form-data/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-form-data_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-form-data/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-form-data/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-form-data_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-form-data/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-form-data/build/screenCapture.npmPackageListing.svg)
 
