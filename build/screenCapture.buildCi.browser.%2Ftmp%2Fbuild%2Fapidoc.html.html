@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/form-data/form-data#readme"
-
-    >form-data (v2.1.4)</a>
+    <a href="https://github.com/form-data/form-data#readme">form-data (v2.1.4)</a>
 </h1>
 <h4>A library to create readable "multipart/form-data" streams. Can be used to submit forms and file uploads to other web applications.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.form-data">module form-data</a><ol>
 
@@ -791,11 +784,11 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.isStreamLike = function (stream) {
-  return (typeof stream !== &#x27;function&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;string&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;boolean&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;number&#x27;)
-    &#x26;&#x26; (!Buffer.isBuffer(stream));
+  return (typeof stream !== 'function')
+    &amp;&amp; (typeof stream !== 'string')
+    &amp;&amp; (typeof stream !== 'boolean')
+    &amp;&amp; (typeof stream !== 'number')
+    &amp;&amp; (!Buffer.isBuffer(stream));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -811,12 +804,12 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype._checkDataSize = function () {
   this._updateDataSize();
-  if (this.dataSize &#x3c;= this.maxDataSize) {
+  if (this.dataSize &lt;= this.maxDataSize) {
     return;
   }
 
   var message =
-    &#x27;DelayedStream#maxDataSize of &#x27; + this.maxDataSize + &#x27; bytes exceeded.&#x27;;
+    'DelayedStream#maxDataSize of ' + this.maxDataSize + ' bytes exceeded.';
   this._emitError(new Error(message));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -833,7 +826,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype._emitError = function (err) {
   this._reset();
-  this.emit(&#x27;error&#x27;, err);
+  this.emit('error', err);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -852,12 +845,12 @@
   var stream = this._streams.shift();
 
 
-  if (typeof stream == &#x27;undefined&#x27;) {
+  if (typeof stream == 'undefined') {
     this.end();
     return;
   }
 
-  if (typeof stream !== &#x27;function&#x27;) {
+  if (typeof stream !== 'function') {
     this._pipeNext(stream);
     return;
   }
@@ -866,7 +859,7 @@
   getStream(function(stream) {
     var isStreamLike = CombinedStream.isStreamLike(stream);
     if (isStreamLike) {
-      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      stream.on('data', this._checkDataSize.bind(this));
       this._handleErrors(stream);
     }
 
@@ -887,7 +880,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype._handleErrors = function (stream) {
   var self = this;
-  stream.on(&#x27;error&#x27;, function(err) {
+  stream.on('error', function(err) {
     self._emitError(err);
   });
 }</pre></li>
@@ -908,7 +901,7 @@
 
   var isStreamLike = CombinedStream.isStreamLike(stream);
   if (isStreamLike) {
-    stream.on(&#x27;end&#x27;, this._getNext.bind(this));
+    stream.on('end', this._getNext.bind(this));
     stream.pipe(this, {end: false});
     return;
   }
@@ -958,7 +951,7 @@
     self.dataSize += stream.dataSize;
   });
 
-  if (this._currentStream &#x26;&#x26; this._currentStream.dataSize) {
+  if (this._currentStream &amp;&amp; this._currentStream.dataSize) {
     this.dataSize += this._currentStream.dataSize;
   }
 }</pre></li>
@@ -983,7 +976,7 @@
         maxDataSize: Infinity,
         pauseStream: this.pauseStreams,
       });
-      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      stream.on('data', this._checkDataSize.bind(this));
       stream = newStream;
     }
 
@@ -1011,7 +1004,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype.destroy = function () {
   this._reset();
-  this.emit(&#x27;close&#x27;);
+  this.emit('close');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1027,7 +1020,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype.end = function () {
   this._reset();
-  this.emit(&#x27;end&#x27;);
+  this.emit('end');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1046,8 +1039,8 @@
     return;
   }
 
-  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.pause) == &#x27;function&#x27;) this._currentStream.pause();
-  this.emit(&#x27;pause&#x27;);
+  if(this.pauseStreams &amp;&amp; this._currentStream &amp;&amp; typeof(this._currentStream.pause) == 'function') this._currentStream.pause();
+  this.emit('pause');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1085,8 +1078,8 @@
     this._getNext();
   }
 
-  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.resume) == &#x27;function&#x27;) this._currentStream.resume();
-  this.emit(&#x27;resume&#x27;);
+  if(this.pauseStreams &amp;&amp; this._currentStream &amp;&amp; typeof(this._currentStream.resume) == 'function') this._currentStream.resume();
+  this.emit('resume');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1101,7 +1094,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype.write = function (data) {
-  this.emit(&#x27;data&#x27;, data);
+  this.emit('data', data);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1205,11 +1198,11 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isStreamLike = function (stream) {
-  return (typeof stream !== &#x27;function&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;string&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;boolean&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;number&#x27;)
-    &#x26;&#x26; (!Buffer.isBuffer(stream));
+  return (typeof stream !== 'function')
+    &amp;&amp; (typeof stream !== 'string')
+    &amp;&amp; (typeof stream !== 'boolean')
+    &amp;&amp; (typeof stream !== 'number')
+    &amp;&amp; (!Buffer.isBuffer(stream));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1256,11 +1249,11 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isStreamLike = function (stream) {
-  return (typeof stream !== &#x27;function&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;string&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;boolean&#x27;)
-    &#x26;&#x26; (typeof stream !== &#x27;number&#x27;)
-    &#x26;&#x26; (!Buffer.isBuffer(stream));
+  return (typeof stream !== 'function')
+    &amp;&amp; (typeof stream !== 'string')
+    &amp;&amp; (typeof stream !== 'boolean')
+    &amp;&amp; (typeof stream !== 'number')
+    &amp;&amp; (!Buffer.isBuffer(stream));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1281,12 +1274,12 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_checkDataSize = function () {
   this._updateDataSize();
-  if (this.dataSize &#x3c;= this.maxDataSize) {
+  if (this.dataSize &lt;= this.maxDataSize) {
     return;
   }
 
   var message =
-    &#x27;DelayedStream#maxDataSize of &#x27; + this.maxDataSize + &#x27; bytes exceeded.&#x27;;
+    'DelayedStream#maxDataSize of ' + this.maxDataSize + ' bytes exceeded.';
   this._emitError(new Error(message));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1303,7 +1296,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_emitError = function (err) {
   this._reset();
-  this.emit(&#x27;error&#x27;, err);
+  this.emit('error', err);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1322,12 +1315,12 @@
   var stream = this._streams.shift();
 
 
-  if (typeof stream == &#x27;undefined&#x27;) {
+  if (typeof stream == 'undefined') {
     this.end();
     return;
   }
 
-  if (typeof stream !== &#x27;function&#x27;) {
+  if (typeof stream !== 'function') {
     this._pipeNext(stream);
     return;
   }
@@ -1336,7 +1329,7 @@
   getStream(function(stream) {
     var isStreamLike = CombinedStream.isStreamLike(stream);
     if (isStreamLike) {
-      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      stream.on('data', this._checkDataSize.bind(this));
       this._handleErrors(stream);
     }
 
@@ -1357,7 +1350,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_handleErrors = function (stream) {
   var self = this;
-  stream.on(&#x27;error&#x27;, function(err) {
+  stream.on('error', function(err) {
     self._emitError(err);
   });
 }</pre></li>
@@ -1378,7 +1371,7 @@
 
   var isStreamLike = CombinedStream.isStreamLike(stream);
   if (isStreamLike) {
-    stream.on(&#x27;end&#x27;, this._getNext.bind(this));
+    stream.on('end', this._getNext.bind(this));
     stream.pipe(this, {end: false});
     return;
   }
@@ -1428,7 +1421,7 @@
     self.dataSize += stream.dataSize;
   });
 
-  if (this._currentStream &#x26;&#x26; this._currentStream.dataSize) {
+  if (this._currentStream &amp;&amp; this._currentStream.dataSize) {
     this.dataSize += this._currentStream.dataSize;
   }
 }</pre></li>
@@ -1453,7 +1446,7 @@
         maxDataSize: Infinity,
         pauseStream: this.pauseStreams,
       });
-      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      stream.on('data', this._checkDataSize.bind(this));
       stream = newStream;
     }
 
@@ -1471,13 +1464,13 @@
 a buffer and a file stream.
 
 ``` javascript
-var FormData = require(&#x27;form-data&#x27;);
-var fs = require(&#x27;fs&#x27;);
+var FormData = require('form-data');
+var fs = require('fs');
 
 var form = new FormData();
-form.<span class="apidocCodeKeywordSpan">append</span>(&#x27;my_field&#x27;, &#x27;my value&#x27;);
-form.append(&#x27;my_buffer&#x27;, new Buffer(10));
-form.append(&#x27;my_file&#x27;, fs.createReadStream(&#x27;/foo/bar.jpg&#x27;));
+form.<span class="apidocCodeKeywordSpan">append</span>('my_field', 'my value');
+form.append('my_buffer', new Buffer(10));
+form.append('my_file', fs.createReadStream('/foo/bar.jpg'));
 ```
 
 Also you can use http-response stream:
@@ -1497,7 +1490,7 @@ Also you can use http-response stream:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">destroy = function () {
   this._reset();
-  this.emit(&#x27;close&#x27;);
+  this.emit('close');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1513,7 +1506,7 @@ Also you can use http-response stream:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">end = function () {
   this._reset();
-  this.emit(&#x27;end&#x27;);
+  this.emit('end');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1532,8 +1525,8 @@ Also you can use http-response stream:
     return;
   }
 
-  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.pause) == &#x27;function&#x27;) this._currentStream.pause();
-  this.emit(&#x27;pause&#x27;);
+  if(this.pauseStreams &amp;&amp; this._currentStream &amp;&amp; typeof(this._currentStream.pause) == 'function') this._currentStream.pause();
+  this.emit('pause');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1554,20 +1547,20 @@ Also you can use http-response stream:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var request = http.request({
-  method: &#x27;post&#x27;,
-  host: &#x27;example.org&#x27;,
-  path: &#x27;/upload&#x27;,
+  method: 'post',
+  host: 'example.org',
+  path: '/upload',
   headers: form.getHeaders()
 });
 
 form.<span class="apidocCodeKeywordSpan">pipe</span>(request);
 
-request.on(&#x27;response&#x27;, function(res) {
+request.on('response', function(res) {
   console.log(res.statusCode);
 });
 ```
 
-Or if you would prefer the `&#x27;Content-Length&#x27;` header to be set for you:
+Or if you would prefer the `'Content-Length'` header to be set for you:
 ...</pre></li>
     </ul>
 
@@ -1587,8 +1580,8 @@ Or if you would prefer the `&#x27;Content-Length&#x27;` header to be set for you
     this._getNext();
   }
 
-  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.resume) == &#x27;function&#x27;) this._currentStream.resume();
-  this.emit(&#x27;resume&#x27;);
+  if(this.pauseStreams &amp;&amp; this._currentStream &amp;&amp; typeof(this._currentStream.resume) == 'function') this._currentStream.resume();
+  this.emit('resume');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```
@@ -1596,8 +1589,8 @@ Or if you would prefer the `&#x27;Content-Length&#x27;` header to be set for you
 In order to submit this form to a web application, call ```submit(url, [callback])``` method:
 
 ``` javascript
-form.submit(&#x27;http://example.org/&#x27;, function(err, res) {
-  // res – response object (http.IncomingMessage)  //
+form.submit('http://example.org/', function(err, res) {
+  // res â€“ response object (http.IncomingMessage)  //
   res.<span class="apidocCodeKeywordSpan">resume</span>();
 });
 
@@ -1620,7 +1613,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">write = function (data) {
-  this.emit(&#x27;data&#x27;, data);
+  this.emit('data', data);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1641,12 +1634,12 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_checkDataSize = function () {
   this._updateDataSize();
-  if (this.dataSize &#x3c;= this.maxDataSize) {
+  if (this.dataSize &lt;= this.maxDataSize) {
     return;
   }
 
   var message =
-    &#x27;DelayedStream#maxDataSize of &#x27; + this.maxDataSize + &#x27; bytes exceeded.&#x27;;
+    'DelayedStream#maxDataSize of ' + this.maxDataSize + ' bytes exceeded.';
   this._emitError(new Error(message));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1668,7 +1661,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_emitError = function (err) {
   this._reset();
-  this.emit(&#x27;error&#x27;, err);
+  this.emit('error', err);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1692,12 +1685,12 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
   var stream = this._streams.shift();
 
 
-  if (typeof stream == &#x27;undefined&#x27;) {
+  if (typeof stream == 'undefined') {
     this.end();
     return;
   }
 
-  if (typeof stream !== &#x27;function&#x27;) {
+  if (typeof stream !== 'function') {
     this._pipeNext(stream);
     return;
   }
@@ -1706,7 +1699,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
   getStream(function(stream) {
     var isStreamLike = CombinedStream.isStreamLike(stream);
     if (isStreamLike) {
-      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      stream.on('data', this._checkDataSize.bind(this));
       this._handleErrors(stream);
     }
 
@@ -1732,7 +1725,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_handleErrors = function (stream) {
   var self = this;
-  stream.on(&#x27;error&#x27;, function(err) {
+  stream.on('error', function(err) {
     self._emitError(err);
   });
 }</pre></li>
@@ -1758,7 +1751,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
 
   var isStreamLike = CombinedStream.isStreamLike(stream);
   if (isStreamLike) {
-    stream.on(&#x27;end&#x27;, this._getNext.bind(this));
+    stream.on('end', this._getNext.bind(this));
     stream.pipe(this, {end: false});
     return;
   }
@@ -1818,7 +1811,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
     self.dataSize += stream.dataSize;
   });
 
-  if (this._currentStream &#x26;&#x26; this._currentStream.dataSize) {
+  if (this._currentStream &amp;&amp; this._currentStream.dataSize) {
     this.dataSize += this._currentStream.dataSize;
   }
 }</pre></li>
@@ -1848,7 +1841,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
         maxDataSize: Infinity,
         pauseStream: this.pauseStreams,
       });
-      stream.on(&#x27;data&#x27;, this._checkDataSize.bind(this));
+      stream.on('data', this._checkDataSize.bind(this));
       stream = newStream;
     }
 
@@ -1866,13 +1859,13 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
 a buffer and a file stream.
 
 ``` javascript
-var FormData = require(&#x27;form-data&#x27;);
-var fs = require(&#x27;fs&#x27;);
+var FormData = require('form-data');
+var fs = require('fs');
 
 var form = new FormData();
-form.<span class="apidocCodeKeywordSpan">append</span>(&#x27;my_field&#x27;, &#x27;my value&#x27;);
-form.append(&#x27;my_buffer&#x27;, new Buffer(10));
-form.append(&#x27;my_file&#x27;, fs.createReadStream(&#x27;/foo/bar.jpg&#x27;));
+form.<span class="apidocCodeKeywordSpan">append</span>('my_field', 'my value');
+form.append('my_buffer', new Buffer(10));
+form.append('my_file', fs.createReadStream('/foo/bar.jpg'));
 ```
 
 Also you can use http-response stream:
@@ -1897,7 +1890,7 @@ Also you can use http-response stream:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">destroy = function () {
   this._reset();
-  this.emit(&#x27;close&#x27;);
+  this.emit('close');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1918,7 +1911,7 @@ Also you can use http-response stream:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">end = function () {
   this._reset();
-  this.emit(&#x27;end&#x27;);
+  this.emit('end');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1942,8 +1935,8 @@ Also you can use http-response stream:
     return;
   }
 
-  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.pause) == &#x27;function&#x27;) this._currentStream.pause();
-  this.emit(&#x27;pause&#x27;);
+  if(this.pauseStreams &amp;&amp; this._currentStream &amp;&amp; typeof(this._currentStream.pause) == 'function') this._currentStream.pause();
+  this.emit('pause');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1969,20 +1962,20 @@ Also you can use http-response stream:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var request = http.request({
-  method: &#x27;post&#x27;,
-  host: &#x27;example.org&#x27;,
-  path: &#x27;/upload&#x27;,
+  method: 'post',
+  host: 'example.org',
+  path: '/upload',
   headers: form.getHeaders()
 });
 
 form.<span class="apidocCodeKeywordSpan">pipe</span>(request);
 
-request.on(&#x27;response&#x27;, function(res) {
+request.on('response', function(res) {
   console.log(res.statusCode);
 });
 ```
 
-Or if you would prefer the `&#x27;Content-Length&#x27;` header to be set for you:
+Or if you would prefer the `'Content-Length'` header to be set for you:
 ...</pre></li>
     </ul>
 
@@ -2007,8 +2000,8 @@ Or if you would prefer the `&#x27;Content-Length&#x27;` header to be set for you
     this._getNext();
   }
 
-  if(this.pauseStreams &#x26;&#x26; this._currentStream &#x26;&#x26; typeof(this._currentStream.resume) == &#x27;function&#x27;) this._currentStream.resume();
-  this.emit(&#x27;resume&#x27;);
+  if(this.pauseStreams &amp;&amp; this._currentStream &amp;&amp; typeof(this._currentStream.resume) == 'function') this._currentStream.resume();
+  this.emit('resume');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```
@@ -2016,8 +2009,8 @@ Or if you would prefer the `&#x27;Content-Length&#x27;` header to be set for you
 In order to submit this form to a web application, call ```submit(url, [callback])``` method:
 
 ``` javascript
-form.submit(&#x27;http://example.org/&#x27;, function(err, res) {
-  // res – response object (http.IncomingMessage)  //
+form.submit('http://example.org/', function(err, res) {
+  // res â€“ response object (http.IncomingMessage)  //
   res.<span class="apidocCodeKeywordSpan">resume</span>();
 });
 
@@ -2045,7 +2038,7 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">write = function (data) {
-  this.emit(&#x27;data&#x27;, data);
+  this.emit('data', data);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2077,3 +2070,4 @@ For more advanced request manipulations ```submit()``` method returns ```http.Cl
     ]
 </div>
 </div>
+</body></html>
