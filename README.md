@@ -1,6 +1,6 @@
 # npmdoc-form-data
 
-#### api documentation for  [form-data (v2.1.4)](https://github.com/form-data/form-data#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-form-data.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-form-data) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-form-data.svg)](https://travis-ci.org/npmdoc/node-npmdoc-form-data)
+#### basic api documentation for  [form-data (v2.1.4)](https://github.com/form-data/form-data#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-form-data.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-form-data) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-form-data.svg)](https://travis-ci.org/npmdoc/node-npmdoc-form-data)
 
 #### A library to create readable "multipart/form-data" streams. Can be used to submit forms and file uploads to other web applications.
 
@@ -111,7 +111,8 @@
         "test": "istanbul cover test/run.js",
         "update-readme": "sed -i.bak 's/\\/master\\.svg/\\/v'$(npm --silent run get-version)'.svg/g' README.md"
     },
-    "version": "2.1.4"
+    "version": "2.1.4",
+    "bin": {}
 }
 ```
 
